@@ -1,7 +1,7 @@
 class Solution {
 public:
     int solve(int n,vector<int>&dp){
-        if(n==0) return 0;
+        if(n<=1) return n;
         if(dp[n]!=-1) return dp[n];
         int ans=INT_MAX;
         for(int i=1;i*i<=n;i++){
@@ -9,10 +9,10 @@ public:
             ans=min(ans,solve(n-temp,dp));
         }
         dp[n]=ans+1;
-        return dp[n];
+      return dp[n];
     }
     int numSquares(int n) {
         vector<int>dp(n+1,-1);
-      return solve(n,dp);
+        return solve(n,dp);
     }
 };
