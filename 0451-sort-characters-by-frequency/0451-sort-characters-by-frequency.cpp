@@ -6,10 +6,10 @@ public:
         for(auto ch:s){
             mp[ch]++;
         }
-        for(auto ch:mp){
-            pq.push({ch.second,ch.first});
+        for(auto ele:mp){
+            pq.push({ele.second,ele.first});
         }
-        string  ans="";
+        string ans="";
         while(pq.size()!=0){
             char ch=pq.top().second;
             int t=pq.top().first;
